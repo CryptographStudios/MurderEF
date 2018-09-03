@@ -10,14 +10,21 @@ namespace Murder.Controllers
 {
 	public class ValuesController : ApiController
 	{
-		// GET api/values
+		/// <summary>
+		/// Matt learning swagger docs
+		/// </summary>
+		/// <returns></returns>
 		[SwaggerOperation("GetAll")]
 		public IEnumerable<string> Get()
 		{
 			return new string[] { "value1", "value2" };
 		}
 
-		// GET api/values/5
+		/// <summary>
+		/// Matt swagger GetById
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		[SwaggerOperation("GetById")]
 		[SwaggerResponse(HttpStatusCode.OK)]
 		[SwaggerResponse(HttpStatusCode.NotFound)]
@@ -26,14 +33,21 @@ namespace Murder.Controllers
 			return "value";
 		}
 
-		// POST api/values
+		/// <summary>
+		/// Matt Swagger POST
+		/// </summary>
+		/// <param name="value"></param>
 		[SwaggerOperation("Create")]
 		[SwaggerResponse(HttpStatusCode.Created)]
 		public void Post([FromBody]string value)
 		{
 		}
 
-		// PUT api/values/5
+		/// <summary>
+		///  Matt Swagger PUT
+		/// </summary>
+		/// <param name="id"></param>
+		/// <param name="value"></param>
 		[SwaggerOperation("Update")]
 		[SwaggerResponse(HttpStatusCode.OK)]
 		[SwaggerResponse(HttpStatusCode.NotFound)]
@@ -41,7 +55,10 @@ namespace Murder.Controllers
 		{
 		}
 
-		// DELETE api/values/5
+		/// <summary>
+		///  Matt Swagger Delete		
+		/// </summary>
+		/// <param name="id"></param>
 		[SwaggerOperation("Delete")]
 		[SwaggerResponse(HttpStatusCode.OK)]
 		[SwaggerResponse(HttpStatusCode.NotFound)]

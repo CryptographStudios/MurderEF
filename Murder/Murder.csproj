@@ -32,6 +32,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Murder.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -196,6 +198,7 @@
       <DependentUpon>Murder.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\MuderWithFriends-MurderSlot1 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MurderAPI - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MurderApp - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
