@@ -27,19 +27,15 @@ namespace Murder
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<LoginHistory> LoginHistories { get; set; }
-        public virtual DbSet<LoginResult> LoginResults { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Character> Characters { get; set; }
         public virtual DbSet<CurrencyType> CurrencyTypes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<ItemType> ItemTypes { get; set; }
         public virtual DbSet<Experience> Experiences { get; set; }
         public virtual DbSet<Stat> Stats { get; set; }
         public virtual DbSet<Equipment> Equipments { get; set; }
         public virtual DbSet<UserCurrency> UserCurrencies { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -4,22 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5bce2974b61a4bf4af22c6cfc1f6f384" Name="Diagram1">
-        <EntityTypeShape EntityType="ItsOnlyHeroesModel.LoginHistory" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ItsOnlyHeroesModel.LoginResult" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="ItsOnlyHeroesModel.User" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ItsOnlyHeroesModel.Character" Width="1.5" PointX="3.75" PointY="14.25" IsExpanded="true" />
+      <Diagram DiagramId="5bce2974b61a4bf4af22c6cfc1f6f384" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="ItsOnlyHeroesModel.User" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItsOnlyHeroesModel.Character" Width="1.5" PointX="8.75" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="ItsOnlyHeroesModel.CurrencyType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ItsOnlyHeroesModel.sysdiagram" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ItsOnlyHeroesModel.Item" Width="1.5" PointX="3.75" PointY="20.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ItsOnlyHeroesModel.ItemType" Width="1.5" PointX="1.5" PointY="21.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ItsOnlyHeroesModel.Experience" Width="1.5" PointX="1.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItsOnlyHeroesModel.Experience" Width="1.5" PointX="8.875" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ItsOnlyHeroesModel.Stat" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ItsOnlyHeroesModel.Equipment" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ItsOnlyHeroesModel.UserCurrency" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ItsOnlyHeroesModel.database_firewall_rules" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
-        <AssociationConnector Association="ItsOnlyHeroesModel.FK_LoginHistory_LoginResult" ManuallyRouted="false" />
-        <AssociationConnector Association="ItsOnlyHeroesModel.FK_LoginHistory_User" ManuallyRouted="false" />
         <AssociationConnector Association="ItsOnlyHeroesModel.FK_Equipment_User" ManuallyRouted="false" />
         <AssociationConnector Association="ItsOnlyHeroesModel.FK_UserCurrency_User" ManuallyRouted="false" />
         <AssociationConnector Association="ItsOnlyHeroesModel.FK_Character_Experience" ManuallyRouted="false" />

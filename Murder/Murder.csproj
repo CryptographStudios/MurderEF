@@ -130,9 +130,6 @@
     <Compile Include="CurrencyType.cs">
       <DependentUpon>Murder.tt</DependentUpon>
     </Compile>
-    <Compile Include="database_firewall_rules.cs">
-      <DependentUpon>Murder.tt</DependentUpon>
-    </Compile>
     <Compile Include="Equipment.cs">
       <DependentUpon>Murder.tt</DependentUpon>
     </Compile>
@@ -146,12 +143,6 @@
       <DependentUpon>Murder.tt</DependentUpon>
     </Compile>
     <Compile Include="ItemType.cs">
-      <DependentUpon>Murder.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LoginHistory.cs">
-      <DependentUpon>Murder.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LoginResult.cs">
       <DependentUpon>Murder.tt</DependentUpon>
     </Compile>
     <Compile Include="Murder.Context.cs">
@@ -177,9 +168,6 @@
       <DependentUpon>Murder.tt</DependentUpon>
     </Compile>
     <Compile Include="Stat.cs">
-      <DependentUpon>Murder.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>Murder.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">

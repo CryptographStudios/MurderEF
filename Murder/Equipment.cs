@@ -19,6 +19,7 @@ namespace Murder
         public long UserId { get; set; }
         public Nullable<int> Quantity { get; set; }
         public long ExperienceId { get; set; }
+        public long EquipmentId { get; set; }
     
         public virtual User User { get; set; }
         public virtual Character Character { get; set; }

@@ -7,15 +7,36 @@ namespace Murder.Tests
 	public class DBUnitTests
 	{
 		[TestMethod]
-		public void TestUser()
+		public void TestGetUser()
 		{
 			using (var context = new ItsOnlyHeroesEntities())
 			{
-				var expectedUserName = "Will";
+				var expectedUserName = "Matt";
 				var heroUser = context.Users.Find(1);
 
 				Assert.AreEqual(expectedUserName, heroUser.UserName);				
 			}
 		}
-	}
+
+        [TestMethod]
+        public void TestAddUser()
+        {
+            User newUser = new User();
+
+            newUser.Active = true;
+            newUser.DisplayName = "MCubed";
+            newUser.LastLogin = DateTime.UtcNow;
+            newUser.UserName = "Matt";
+
+            using (var context = new ItsOnlyHeroesEntities())
+            {
+                var heroUser = context.Users.Add(newUser);
+                context.SaveChanges();
+                Assert.IsNotNull(heroUser.UserId);
+                Assert.IsTrue(heroUser.UserId > 0);
+            }
+        }
+    }
+
+   
 }
