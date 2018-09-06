@@ -22,29 +22,23 @@ namespace Murder
         }
     
         public long StatsId { get; set; }
-        public Nullable<int> Strength { get; set; }
-        public Nullable<int> Dexterity { get; set; }
-        public Nullable<int> Agility { get; set; }
-        public Nullable<int> Wisdom { get; set; }
-        public Nullable<int> Intelligence { get; set; }
-        public Nullable<int> Charisma { get; set; }
-        public Nullable<int> Constitution { get; set; }
-        public Nullable<int> ElectricResist { get; set; }
-        public Nullable<int> WaterResist { get; set; }
-        public Nullable<int> FireResist { get; set; }
-        public Nullable<int> EarthResist { get; set; }
-        public Nullable<int> HolyResist { get; set; }
-        public Nullable<int> DarkResist { get; set; }
-        public Nullable<int> ElectricBonus { get; set; }
-        public Nullable<int> WaterBonus { get; set; }
-        public Nullable<int> FireBonus { get; set; }
-        public Nullable<int> EarthBonus { get; set; }
-        public Nullable<int> HolyBonus { get; set; }
-        public Nullable<int> DarkBonus { get; set; }
-        public Nullable<int> Armor { get; set; }
-        public Nullable<int> MagicResist { get; set; }
-        public Nullable<int> ArmorPenetration { get; set; }
-        public Nullable<int> MagicPenetration { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity { get; set; }
+        public int Agility { get; set; }
+        public int Wisdom { get; set; }
+        public int Intelligence { get; set; }
+        public int Charisma { get; set; }
+        public int Constitution { get; set; }
+        public int ElectricBonus { get; set; }
+        public int WaterBonus { get; set; }
+        public int FireBonus { get; set; }
+        public int EarthBonus { get; set; }
+        public int HolyBonus { get; set; }
+        public int DarkBonus { get; set; }
+        public int Armor { get; set; }
+        public int MagicResist { get; set; }
+        public int ArmorPenetration { get; set; }
+        public int MagicPenetration { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Character> Characters { get; set; }

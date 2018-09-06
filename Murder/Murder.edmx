@@ -89,29 +89,23 @@
             <PropertyRef Name="StatsId" />
           </Key>
           <Property Name="StatsId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Strength" Type="int" />
-          <Property Name="Dexterity" Type="int" />
-          <Property Name="Agility" Type="int" />
-          <Property Name="Wisdom" Type="int" />
-          <Property Name="Intelligence" Type="int" />
-          <Property Name="Charisma" Type="int" />
-          <Property Name="Constitution" Type="int" />
-          <Property Name="ElectricResist" Type="int" />
-          <Property Name="WaterResist" Type="int" />
-          <Property Name="FireResist" Type="int" />
-          <Property Name="EarthResist" Type="int" />
-          <Property Name="HolyResist" Type="int" />
-          <Property Name="DarkResist" Type="int" />
-          <Property Name="ElectricBonus" Type="int" />
-          <Property Name="WaterBonus" Type="int" />
-          <Property Name="FireBonus" Type="int" />
-          <Property Name="EarthBonus" Type="int" />
-          <Property Name="HolyBonus" Type="int" />
-          <Property Name="DarkBonus" Type="int" />
-          <Property Name="Armor" Type="int" />
-          <Property Name="MagicResist" Type="int" />
-          <Property Name="ArmorPenetration" Type="int" />
-          <Property Name="MagicPenetration" Type="int" />
+          <Property Name="Strength" Type="int" Nullable="false" />
+          <Property Name="Dexterity" Type="int" Nullable="false" />
+          <Property Name="Agility" Type="int" Nullable="false" />
+          <Property Name="Wisdom" Type="int" Nullable="false" />
+          <Property Name="Intelligence" Type="int" Nullable="false" />
+          <Property Name="Charisma" Type="int" Nullable="false" />
+          <Property Name="Constitution" Type="int" Nullable="false" />
+          <Property Name="ElectricBonus" Type="int" Nullable="false" />
+          <Property Name="WaterBonus" Type="int" Nullable="false" />
+          <Property Name="FireBonus" Type="int" Nullable="false" />
+          <Property Name="EarthBonus" Type="int" Nullable="false" />
+          <Property Name="HolyBonus" Type="int" Nullable="false" />
+          <Property Name="DarkBonus" Type="int" Nullable="false" />
+          <Property Name="Armor" Type="int" Nullable="false" />
+          <Property Name="MagicResist" Type="int" Nullable="false" />
+          <Property Name="ArmorPenetration" Type="int" Nullable="false" />
+          <Property Name="MagicPenetration" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Character_Experience">
           <End Role="Experience" Type="Self.Experience" Multiplicity="0..1" />
@@ -382,29 +376,23 @@
             <PropertyRef Name="StatsId" />
           </Key>
           <Property Name="StatsId" Type="Int64" Nullable="false" />
-          <Property Name="Strength" Type="Int32" />
-          <Property Name="Dexterity" Type="Int32" />
-          <Property Name="Agility" Type="Int32" />
-          <Property Name="Wisdom" Type="Int32" />
-          <Property Name="Intelligence" Type="Int32" />
-          <Property Name="Charisma" Type="Int32" />
-          <Property Name="Constitution" Type="Int32" />
-          <Property Name="ElectricResist" Type="Int32" />
-          <Property Name="WaterResist" Type="Int32" />
-          <Property Name="FireResist" Type="Int32" />
-          <Property Name="EarthResist" Type="Int32" />
-          <Property Name="HolyResist" Type="Int32" />
-          <Property Name="DarkResist" Type="Int32" />
-          <Property Name="ElectricBonus" Type="Int32" />
-          <Property Name="WaterBonus" Type="Int32" />
-          <Property Name="FireBonus" Type="Int32" />
-          <Property Name="EarthBonus" Type="Int32" />
-          <Property Name="HolyBonus" Type="Int32" />
-          <Property Name="DarkBonus" Type="Int32" />
-          <Property Name="Armor" Type="Int32" />
-          <Property Name="MagicResist" Type="Int32" />
-          <Property Name="ArmorPenetration" Type="Int32" />
-          <Property Name="MagicPenetration" Type="Int32" />
+          <Property Name="Strength" Type="Int32" Nullable="false" />
+          <Property Name="Dexterity" Type="Int32" Nullable="false" />
+          <Property Name="Agility" Type="Int32" Nullable="false" />
+          <Property Name="Wisdom" Type="Int32" Nullable="false" />
+          <Property Name="Intelligence" Type="Int32" Nullable="false" />
+          <Property Name="Charisma" Type="Int32" Nullable="false" />
+          <Property Name="Constitution" Type="Int32" Nullable="false" />
+          <Property Name="ElectricBonus" Type="Int32" Nullable="false" />
+          <Property Name="WaterBonus" Type="Int32" Nullable="false" />
+          <Property Name="FireBonus" Type="Int32" Nullable="false" />
+          <Property Name="EarthBonus" Type="Int32" Nullable="false" />
+          <Property Name="HolyBonus" Type="Int32" Nullable="false" />
+          <Property Name="DarkBonus" Type="Int32" Nullable="false" />
+          <Property Name="Armor" Type="Int32" Nullable="false" />
+          <Property Name="MagicResist" Type="Int32" Nullable="false" />
+          <Property Name="ArmorPenetration" Type="Int32" Nullable="false" />
+          <Property Name="MagicPenetration" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Characters" Relationship="Self.FK_Character_Stats" FromRole="Stats" ToRole="Character" />
           <NavigationProperty Name="Items" Relationship="Self.FK_Item_Stats" FromRole="Stats" ToRole="Item" />
         </EntityType>
@@ -744,12 +732,6 @@
                 <ScalarProperty Name="Intelligence" ColumnName="Intelligence" />
                 <ScalarProperty Name="Charisma" ColumnName="Charisma" />
                 <ScalarProperty Name="Constitution" ColumnName="Constitution" />
-                <ScalarProperty Name="ElectricResist" ColumnName="ElectricResist" />
-                <ScalarProperty Name="WaterResist" ColumnName="WaterResist" />
-                <ScalarProperty Name="FireResist" ColumnName="FireResist" />
-                <ScalarProperty Name="EarthResist" ColumnName="EarthResist" />
-                <ScalarProperty Name="HolyResist" ColumnName="HolyResist" />
-                <ScalarProperty Name="DarkResist" ColumnName="DarkResist" />
                 <ScalarProperty Name="ElectricBonus" ColumnName="ElectricBonus" />
                 <ScalarProperty Name="WaterBonus" ColumnName="WaterBonus" />
                 <ScalarProperty Name="FireBonus" ColumnName="FireBonus" />
