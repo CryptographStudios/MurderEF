@@ -106,5 +106,46 @@ namespace ItemCreationTool
             costNumericUpDown.Value = item.BuyValue ?? 0;
             sellValueNumericUpDown.Value = item.SellValue ?? 0;
         }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            var item = (Item)(ItemList.SelectedItem);
+
+            if (item == null)
+                item = new Item();
+
+            item.Name = itemNameTextBox.Text;
+
+            item.Stat.Strength = (int)StrNumericUpDown.Value;
+            item.Stat.Dexterity = (int)DexNumericUpDown.Value;
+            item.Stat.Agility = (int)AgiNumericUpDown.Value;
+            item.Stat.Wisdom = (int)WisNumericUpDown.Value;
+            item.Stat.Intelligence = (int)IntNumericUpDown.Value;
+            item.Stat.Charisma = (int)ChaNumericUpDown.Value;
+            item.Stat.Constitution = (int)conNumericUpDown.Value;
+            item.Stat.ElectricBonus = (int)eleNumericUpDown.Value;
+            item.Stat.WaterBonus = (int)wtrNumericUpDown.Value;
+            item.Stat.FireBonus = (int)firNumericUpDown.Value;
+            item.Stat.EarthBonus = (int)earNumericUpDown.Value;
+            item.Stat.HolyBonus = (int)hlyNumericUpDown.Value;
+            item.Stat.DarkBonus = (int)drkNumericUpDown.Value;
+            item.Stat.Armor = (int)armNumericUpDown.Value;
+            item.Stat.MagicResist = (int)magNumericUpDown.Value;
+            item.Stat.MagicPenetration = (int)apenNumericUpDown.Value;
+            item.Stat.ArmorPenetration = (int)mpenNumericUpDown.Value;
+
+            item.SellValue = (int)sellValueNumericUpDown.Value;
+            item.BuyValue = (int)costNumericUpDown.Value;
+            item.BuyCurrencyId = ((CurrencyType)currencyTypeComboBox.SelectedItem).CurrencyTypeId;
+            item.ItemTypeId = ((ItemType)ItemTypeComboBox.SelectedItem).ItemTypeId;
+
+            //this actually adds new. I need to fix for update
+            using (var context = new ItsOnlyHeroesEntities())
+            {
+                context.Items.Add(item);
+                context.SaveChanges();
+            }
+
+        }
     }
 }
