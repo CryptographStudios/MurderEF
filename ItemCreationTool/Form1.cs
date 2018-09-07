@@ -36,7 +36,8 @@ namespace ItemCreationTool
 
             using (var context = new ItsOnlyHeroesEntities())
             {
-                items = context.Items.Include(x => x.ItemType)
+                items = context.Items.Where(x => x.Active == true)
+                    .Include(x => x.ItemType)
                     .Include(x => x.Stat)
                     .Include(x => x.CurrencyType)
                     .ToList();
@@ -140,12 +141,16 @@ namespace ItemCreationTool
                 item.BuyValue = updatedItem.BuyValue;
                 item.BuyCurrencyId = updatedItem.BuyCurrencyId;
                 item.ItemTypeId = updatedItem.ItemTypeId;
+                item.Active = updatedItem.Active;
 
                 context.SaveChanges();
             }
 
             //probably not the best way to do this.
             GetItems();
+            ItemListBox.SelectedItem = ItemListBox.Items.OfType<Item>()
+                                        .Where(i => i.ItemId == itemToSave.ItemId)
+                                        .FirstOrDefault();
         }
 
         private Item GetItemFromView()
@@ -190,6 +195,7 @@ namespace ItemCreationTool
             item.ItemTypeId = 1;
             item.CurrencyType = new CurrencyType();
             item.BuyCurrencyId = 1;
+            item.Active = true;
 
             return item;
         }
@@ -201,6 +207,24 @@ namespace ItemCreationTool
             item.Name = "New Item";
             ItemListBox.Items.Add(item);
             ItemListBox.SelectedIndex = ItemListBox.Items.IndexOf(item);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var itemToDelete = (Item)ItemListBox.SelectedItem;
+            if (itemToDelete == null)
+                return;
+
+            using (var context = new ItsOnlyHeroesEntities())
+            {
+                var item = context.Items.Find(itemToDelete.ItemId);
+                if (item != null)
+                {
+                    item.Active = false;
+                    context.SaveChanges();
+                }
+
+            }
         }
     }
 }
