@@ -32,17 +32,19 @@ namespace ItemCreationTool
 
         private void GetItems()
         {
+            ItemListBox.Items.Clear();
+
             using (var context = new ItsOnlyHeroesEntities())
             {
                 items = context.Items.Include(x => x.ItemType)
-                    .Include(x=>x.Stat) 
-                    .Include(x=>x.CurrencyType)
-                    .ToList();         
+                    .Include(x => x.Stat)
+                    .Include(x => x.CurrencyType)
+                    .ToList();
             }
 
-            ItemList.DisplayMember = "Name";
-            ItemList.ValueMember = "ItemId";
-            ItemList.Items.AddRange(items.ToArray());
+            ItemListBox.DisplayMember = "Name";
+            ItemListBox.ValueMember = "ItemId";
+            ItemListBox.Items.AddRange(items.ToArray());
         }
 
         private void GetItemTypes()
@@ -77,6 +79,21 @@ namespace ItemCreationTool
             if (item == null)
                 return;
 
+            UpdateItemListValues(item);
+
+            //I know this looks stupid. It didn't work the way I thought it would. If you know a better way, lmk. - WH
+            var curType = currencyTypes.Where(i => i.CurrencyTypeId == item.BuyCurrencyId).FirstOrDefault();
+            currencyTypeComboBox.SelectedIndex = currencyTypeComboBox.Items.IndexOf(curType);
+
+            var itemType = itemTypes.Where(i => i.ItemTypeId == item.ItemTypeId).FirstOrDefault();
+            ItemTypeComboBox.SelectedIndex = ItemTypeComboBox.Items.IndexOf(itemType);
+
+            costNumericUpDown.Value = item.BuyValue ?? 0;
+            sellValueNumericUpDown.Value = item.SellValue ?? 0;
+        }
+
+        void UpdateItemListValues(Item item)
+        {
             itemNameTextBox.Text = item.Name;
             StrNumericUpDown.Value = item.Stat.Strength;
             DexNumericUpDown.Value = item.Stat.Dexterity;
@@ -95,24 +112,45 @@ namespace ItemCreationTool
             magNumericUpDown.Value = item.Stat.MagicResist;
             apenNumericUpDown.Value = item.Stat.MagicPenetration;
             mpenNumericUpDown.Value = item.Stat.ArmorPenetration;
-
-            //I know this looks stupid. It didn't work the way I thought it would. If you know a better way, lmk. - WH
-            var curType = currencyTypes.Where(i => i.CurrencyTypeId == item.BuyCurrencyId).FirstOrDefault();
-            currencyTypeComboBox.SelectedIndex = currencyTypeComboBox.Items.IndexOf(curType);
-
-            var itemType = itemTypes.Where(i => i.ItemTypeId == item.ItemTypeId).FirstOrDefault();
-            ItemTypeComboBox.SelectedIndex = ItemTypeComboBox.Items.IndexOf(itemType);
-
-            costNumericUpDown.Value = item.BuyValue ?? 0;
-            sellValueNumericUpDown.Value = item.SellValue ?? 0;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            var item = (Item)(ItemList.SelectedItem);
+            var itemToSave = (Item)ItemListBox.SelectedItem;
+            if (itemToSave == null)
+                return;
 
-            if (item == null)
-                item = new Item();
+            using (var context = new ItsOnlyHeroesEntities())
+            {
+                Item item = new Item();
+
+                if (itemToSave.ItemId > 0)
+                {
+                    item = context.Items.Find(itemToSave.ItemId);
+                }
+                else
+                {
+                    context.Items.Add(item);
+                }
+
+                var updatedItem = GetItemFromView();
+                item.Name = updatedItem.Name;
+                item.Stat = updatedItem.Stat;
+                item.SellValue = updatedItem.SellValue;
+                item.BuyValue = updatedItem.BuyValue;
+                item.BuyCurrencyId = updatedItem.BuyCurrencyId;
+                item.ItemTypeId = updatedItem.ItemTypeId;
+
+                context.SaveChanges();
+            }
+
+            //probably not the best way to do this.
+            GetItems();
+        }
+
+        private Item GetItemFromView()
+        {
+            Item item = NewItemBuilder();
 
             item.Name = itemNameTextBox.Text;
 
@@ -139,13 +177,30 @@ namespace ItemCreationTool
             item.BuyCurrencyId = ((CurrencyType)currencyTypeComboBox.SelectedItem).CurrencyTypeId;
             item.ItemTypeId = ((ItemType)ItemTypeComboBox.SelectedItem).ItemTypeId;
 
-            //this actually adds new. I need to fix for update
-            using (var context = new ItsOnlyHeroesEntities())
-            {
-                context.Items.Add(item);
-                context.SaveChanges();
-            }
+            return item;
+        }
 
+        Item NewItemBuilder()
+        {
+            //something something dependency injection.
+            Item item = new Item();
+            item.Stat = new Stat();
+            //these are always set to a default.
+            item.ItemType = new ItemType();
+            item.ItemTypeId = 1;
+            item.CurrencyType = new CurrencyType();
+            item.BuyCurrencyId = 1;
+
+            return item;
+        }
+
+        private void newItemButton_Click(object sender, EventArgs e)
+        {
+            Item item = NewItemBuilder();
+
+            item.Name = "New Item";
+            ItemListBox.Items.Add(item);
+            ItemListBox.SelectedIndex = ItemListBox.Items.IndexOf(item);
         }
     }
 }

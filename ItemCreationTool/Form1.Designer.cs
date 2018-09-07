@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ItemList = new System.Windows.Forms.ListBox();
+            this.ItemListBox = new System.Windows.Forms.ListBox();
             this.ItemTypeComboBox = new System.Windows.Forms.ComboBox();
             this.itemNameTextBox = new System.Windows.Forms.TextBox();
             this.itemTypeLabel = new System.Windows.Forms.Label();
@@ -78,6 +78,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.newItemButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellValueNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StrNumericUpDown)).BeginInit();
@@ -104,12 +105,12 @@
             // 
             // ItemList
             // 
-            this.ItemList.FormattingEnabled = true;
-            this.ItemList.Location = new System.Drawing.Point(12, 65);
-            this.ItemList.Name = "ItemList";
-            this.ItemList.Size = new System.Drawing.Size(211, 433);
-            this.ItemList.TabIndex = 0;
-            this.ItemList.SelectedIndexChanged += new System.EventHandler(this.ItemList_SelectedIndexChanged);
+            this.ItemListBox.FormattingEnabled = true;
+            this.ItemListBox.Location = new System.Drawing.Point(12, 65);
+            this.ItemListBox.Name = "ItemList";
+            this.ItemListBox.Size = new System.Drawing.Size(211, 407);
+            this.ItemListBox.TabIndex = 0;
+            this.ItemListBox.SelectedIndexChanged += new System.EventHandler(this.ItemList_SelectedIndexChanged);
             // 
             // ItemTypeComboBox
             // 
@@ -555,11 +556,22 @@
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // newItemButton
+            // 
+            this.newItemButton.Location = new System.Drawing.Point(13, 475);
+            this.newItemButton.Name = "newItemButton";
+            this.newItemButton.Size = new System.Drawing.Size(210, 23);
+            this.newItemButton.TabIndex = 39;
+            this.newItemButton.Text = "New Item";
+            this.newItemButton.UseVisualStyleBackColor = true;
+            this.newItemButton.Click += new System.EventHandler(this.newItemButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 522);
+            this.Controls.Add(this.newItemButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label26);
@@ -575,7 +587,7 @@
             this.Controls.Add(this.itemTypeLabel);
             this.Controls.Add(this.itemNameTextBox);
             this.Controls.Add(this.ItemTypeComboBox);
-            this.Controls.Add(this.ItemList);
+            this.Controls.Add(this.ItemListBox);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).EndInit();
@@ -610,7 +622,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox ItemList;
+        private System.Windows.Forms.ListBox ItemListBox;
         private System.Windows.Forms.ComboBox ItemTypeComboBox;
         private System.Windows.Forms.TextBox itemNameTextBox;
         private System.Windows.Forms.Label itemTypeLabel;
@@ -660,6 +672,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button newItemButton;
     }
 }
 
