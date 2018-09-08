@@ -79,6 +79,9 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.newItemButton = new System.Windows.Forms.Button();
+            this.addCurrencyTypeButton = new System.Windows.Forms.Button();
+            this.typeDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellValueNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StrNumericUpDown)).BeginInit();
@@ -103,11 +106,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.apenNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // ItemList
+            // ItemListBox
             // 
             this.ItemListBox.FormattingEnabled = true;
             this.ItemListBox.Location = new System.Drawing.Point(12, 65);
-            this.ItemListBox.Name = "ItemList";
+            this.ItemListBox.Name = "ItemListBox";
             this.ItemListBox.Size = new System.Drawing.Size(211, 407);
             this.ItemListBox.TabIndex = 0;
             this.ItemListBox.SelectedIndexChanged += new System.EventHandler(this.ItemList_SelectedIndexChanged);
@@ -115,14 +118,14 @@
             // ItemTypeComboBox
             // 
             this.ItemTypeComboBox.FormattingEnabled = true;
-            this.ItemTypeComboBox.Location = new System.Drawing.Point(249, 128);
+            this.ItemTypeComboBox.Location = new System.Drawing.Point(461, 87);
             this.ItemTypeComboBox.Name = "ItemTypeComboBox";
-            this.ItemTypeComboBox.Size = new System.Drawing.Size(190, 21);
+            this.ItemTypeComboBox.Size = new System.Drawing.Size(107, 21);
             this.ItemTypeComboBox.TabIndex = 1;
             // 
             // itemNameTextBox
             // 
-            this.itemNameTextBox.Location = new System.Drawing.Point(249, 89);
+            this.itemNameTextBox.Location = new System.Drawing.Point(254, 88);
             this.itemNameTextBox.Name = "itemNameTextBox";
             this.itemNameTextBox.Size = new System.Drawing.Size(190, 20);
             this.itemNameTextBox.TabIndex = 2;
@@ -130,7 +133,7 @@
             // itemTypeLabel
             // 
             this.itemTypeLabel.AutoSize = true;
-            this.itemTypeLabel.Location = new System.Drawing.Point(246, 112);
+            this.itemTypeLabel.Location = new System.Drawing.Point(458, 71);
             this.itemTypeLabel.Name = "itemTypeLabel";
             this.itemTypeLabel.Size = new System.Drawing.Size(31, 13);
             this.itemTypeLabel.TabIndex = 3;
@@ -139,7 +142,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(246, 73);
+            this.nameLabel.Location = new System.Drawing.Point(251, 72);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(35, 13);
             this.nameLabel.TabIndex = 4;
@@ -147,7 +150,7 @@
             // 
             // costNumericUpDown
             // 
-            this.costNumericUpDown.Location = new System.Drawing.Point(469, 128);
+            this.costNumericUpDown.Location = new System.Drawing.Point(721, 155);
             this.costNumericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -159,7 +162,7 @@
             // 
             // sellValueNumericUpDown
             // 
-            this.sellValueNumericUpDown.Location = new System.Drawing.Point(604, 129);
+            this.sellValueNumericUpDown.Location = new System.Drawing.Point(721, 209);
             this.sellValueNumericUpDown.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -172,7 +175,7 @@
             // currencyTypeComboBox
             // 
             this.currencyTypeComboBox.FormattingEnabled = true;
-            this.currencyTypeComboBox.Location = new System.Drawing.Point(469, 88);
+            this.currencyTypeComboBox.Location = new System.Drawing.Point(721, 104);
             this.currencyTypeComboBox.Name = "currencyTypeComboBox";
             this.currencyTypeComboBox.Size = new System.Drawing.Size(120, 21);
             this.currencyTypeComboBox.TabIndex = 30;
@@ -242,7 +245,7 @@
             this.groupBox1.Controls.Add(this.AgiNumericUpDown);
             this.groupBox1.Controls.Add(this.DexNumericUpDown);
             this.groupBox1.Controls.Add(this.StrNumericUpDown);
-            this.groupBox1.Location = new System.Drawing.Point(235, 166);
+            this.groupBox1.Location = new System.Drawing.Point(250, 262);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(194, 236);
             this.groupBox1.TabIndex = 31;
@@ -326,7 +329,7 @@
             this.groupBox2.Controls.Add(this.firNumericUpDown);
             this.groupBox2.Controls.Add(this.wtrNumericUpDown);
             this.groupBox2.Controls.Add(this.eleNumericUpDown);
-            this.groupBox2.Location = new System.Drawing.Point(469, 166);
+            this.groupBox2.Location = new System.Drawing.Point(462, 262);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(194, 236);
             this.groupBox2.TabIndex = 32;
@@ -471,9 +474,9 @@
             this.groupBox3.Controls.Add(this.mpenNumericUpDown);
             this.groupBox3.Controls.Add(this.apenNumericUpDown);
             this.groupBox3.Controls.Add(this.armNumericUpDown);
-            this.groupBox3.Location = new System.Drawing.Point(669, 166);
+            this.groupBox3.Location = new System.Drawing.Point(669, 270);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(194, 236);
+            this.groupBox3.Size = new System.Drawing.Size(194, 135);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Weakness";
@@ -513,7 +516,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(466, 72);
+            this.label24.Location = new System.Drawing.Point(718, 88);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(124, 13);
             this.label24.TabIndex = 34;
@@ -522,7 +525,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(466, 112);
+            this.label25.Location = new System.Drawing.Point(718, 139);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(28, 13);
             this.label25.TabIndex = 35;
@@ -531,7 +534,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(609, 112);
+            this.label26.Location = new System.Drawing.Point(725, 190);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(54, 13);
             this.label26.TabIndex = 36;
@@ -566,11 +569,40 @@
             this.newItemButton.UseVisualStyleBackColor = true;
             this.newItemButton.Click += new System.EventHandler(this.newItemButton_Click);
             // 
+            // addCurrencyTypeButton
+            // 
+            this.addCurrencyTypeButton.Location = new System.Drawing.Point(575, 87);
+            this.addCurrencyTypeButton.Name = "addCurrencyTypeButton";
+            this.addCurrencyTypeButton.Size = new System.Drawing.Size(75, 23);
+            this.addCurrencyTypeButton.TabIndex = 40;
+            this.addCurrencyTypeButton.Text = "Add Type";
+            this.addCurrencyTypeButton.UseVisualStyleBackColor = true;
+            this.addCurrencyTypeButton.Click += new System.EventHandler(this.addCurrencyTypeButton_Click);
+            // 
+            // typeDescriptionTextBox
+            // 
+            this.typeDescriptionTextBox.Location = new System.Drawing.Point(463, 128);
+            this.typeDescriptionTextBox.Multiline = true;
+            this.typeDescriptionTextBox.Name = "typeDescriptionTextBox";
+            this.typeDescriptionTextBox.Size = new System.Drawing.Size(193, 125);
+            this.typeDescriptionTextBox.TabIndex = 41;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(254, 128);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 125);
+            this.textBox1.TabIndex = 42;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 522);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.typeDescriptionTextBox);
+            this.Controls.Add(this.addCurrencyTypeButton);
             this.Controls.Add(this.newItemButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.saveButton);
@@ -673,6 +705,9 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button newItemButton;
+        private System.Windows.Forms.Button addCurrencyTypeButton;
+        private System.Windows.Forms.TextBox typeDescriptionTextBox;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

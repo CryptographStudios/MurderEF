@@ -58,6 +58,7 @@ namespace ItemCreationTool
             ItemTypeComboBox.DisplayMember = "ItemTypeName";
             ItemTypeComboBox.ValueMember = "ItemTypeId";
             ItemTypeComboBox.Items.AddRange(itemTypes.ToArray());
+            typeDescriptionTextBox.Text = "";
         }
 
         private void GetCurrencyTypes()
@@ -91,6 +92,8 @@ namespace ItemCreationTool
 
             costNumericUpDown.Value = item.BuyValue ?? 0;
             sellValueNumericUpDown.Value = item.SellValue ?? 0;
+
+            typeDescriptionTextBox.Text = item.ItemType.ItemTypeDescription;
         }
 
         void UpdateItemListValues(Item item)
@@ -224,6 +227,27 @@ namespace ItemCreationTool
                     context.SaveChanges();
                 }
 
+            }
+        }
+
+        private void addCurrencyTypeButton_Click(object sender, EventArgs e)
+        {
+
+            var newType = ItemTypeComboBox.Text;
+            bool exists = ItemTypeComboBox.Items.OfType<ItemType>()
+                                            .Where(i => i.ItemTypeName == newType).Any();
+
+            if (exists) //if it exists, we should update it.
+                return;
+
+            var newItemType = new ItemType();
+            newItemType.ItemTypeName = newType;
+            newItemType.ItemTypeDescription = typeDescriptionTextBox.Text;
+
+            using (var context = new ItsOnlyHeroesEntities())
+            {
+                context.ItemTypes.Add(newItemType);
+                context.SaveChanges();
             }
         }
     }
