@@ -79,7 +79,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.newItemButton = new System.Windows.Forms.Button();
-            this.addCurrencyTypeButton = new System.Windows.Forms.Button();
+            this.addItemTypeButton = new System.Windows.Forms.Button();
             this.typeDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
@@ -569,15 +569,15 @@
             this.newItemButton.UseVisualStyleBackColor = true;
             this.newItemButton.Click += new System.EventHandler(this.newItemButton_Click);
             // 
-            // addCurrencyTypeButton
+            // addItemTypeButton
             // 
-            this.addCurrencyTypeButton.Location = new System.Drawing.Point(575, 87);
-            this.addCurrencyTypeButton.Name = "addCurrencyTypeButton";
-            this.addCurrencyTypeButton.Size = new System.Drawing.Size(75, 23);
-            this.addCurrencyTypeButton.TabIndex = 40;
-            this.addCurrencyTypeButton.Text = "Add Type";
-            this.addCurrencyTypeButton.UseVisualStyleBackColor = true;
-            this.addCurrencyTypeButton.Click += new System.EventHandler(this.addCurrencyTypeButton_Click);
+            this.addItemTypeButton.Location = new System.Drawing.Point(575, 87);
+            this.addItemTypeButton.Name = "addItemTypeButton";
+            this.addItemTypeButton.Size = new System.Drawing.Size(75, 23);
+            this.addItemTypeButton.TabIndex = 40;
+            this.addItemTypeButton.Text = "Add Type";
+            this.addItemTypeButton.UseVisualStyleBackColor = true;
+            this.addItemTypeButton.Click += new System.EventHandler(this.addCurrencyTypeButton_Click);
             // 
             // typeDescriptionTextBox
             // 
@@ -602,7 +602,7 @@
             this.ClientSize = new System.Drawing.Size(973, 522);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.typeDescriptionTextBox);
-            this.Controls.Add(this.addCurrencyTypeButton);
+            this.Controls.Add(this.addItemTypeButton);
             this.Controls.Add(this.newItemButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.saveButton);
@@ -705,7 +705,7 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button newItemButton;
-        private System.Windows.Forms.Button addCurrencyTypeButton;
+        private System.Windows.Forms.Button addItemTypeButton;
         private System.Windows.Forms.TextBox typeDescriptionTextBox;
         private System.Windows.Forms.TextBox textBox1;
     }

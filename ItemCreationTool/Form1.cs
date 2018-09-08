@@ -50,6 +50,8 @@ namespace ItemCreationTool
 
         private void GetItemTypes()
         {
+            ItemTypeComboBox.Items.Clear();
+
             using (var context = new ItsOnlyHeroesEntities())
             {
                 itemTypes = context.ItemTypes.ToList();
@@ -249,6 +251,7 @@ namespace ItemCreationTool
                 context.ItemTypes.Add(newItemType);
                 context.SaveChanges();
             }
+            GetItemTypes();
         }
     }
 }
