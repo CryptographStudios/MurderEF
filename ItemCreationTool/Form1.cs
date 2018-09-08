@@ -24,7 +24,6 @@ namespace ItemCreationTool
             InitializeComponent();
 
             //May the fuckery begin.
-            //ItemList.Items.Add("Sword");
             GetItems();
             GetItemTypes();
             GetCurrencyTypes();
@@ -42,7 +41,7 @@ namespace ItemCreationTool
                     .Include(x => x.CurrencyType)
                     .ToList();
             }
-
+            //setting up some defaults.
             ItemListBox.DisplayMember = "Name";
             ItemListBox.ValueMember = "ItemId";
             ItemListBox.Items.AddRange(items.ToArray());
@@ -73,7 +72,6 @@ namespace ItemCreationTool
             currencyTypeComboBox.ValueMember = "CurrencyTypeId";
             currencyTypeComboBox.Items.AddRange(currencyTypes.ToArray());
             var really = currencyTypeComboBox.Items.Contains(currencyTypes[0]);
-
         }
 
         private void ItemList_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,6 +138,7 @@ namespace ItemCreationTool
                     context.Items.Add(item);
                 }
 
+                //there's probably a better way to copy this over, but you only have context from EF items.
                 var updatedItem = GetItemFromView();
                 item.Name = updatedItem.Name;
                 item.Stat = updatedItem.Stat;
