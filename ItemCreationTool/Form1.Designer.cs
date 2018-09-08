@@ -122,6 +122,7 @@
             this.ItemTypeComboBox.Name = "ItemTypeComboBox";
             this.ItemTypeComboBox.Size = new System.Drawing.Size(107, 21);
             this.ItemTypeComboBox.TabIndex = 1;
+            this.ItemTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.ItemTypeComboBox_SelectedIndexChanged);
             // 
             // itemNameTextBox
             // 

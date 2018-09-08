@@ -256,5 +256,11 @@ namespace ItemCreationTool
             }
             GetItemTypes();
         }
+
+        private void ItemTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var itemType = (ItemType)ItemTypeComboBox.SelectedItem;
+            typeDescriptionTextBox.Text = itemType.ItemTypeDescription;
+        }
     }
 }
