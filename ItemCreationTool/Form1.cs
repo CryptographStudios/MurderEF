@@ -96,6 +96,7 @@ namespace ItemCreationTool
             sellValueNumericUpDown.Value = item.SellValue ?? 0;
 
             typeDescriptionTextBox.Text = item.ItemType.ItemTypeDescription;
+            itemDescriptionTextBox.Text = item.Description;
         }
 
         void UpdateItemListValues(Item item)
@@ -147,6 +148,7 @@ namespace ItemCreationTool
                 item.BuyCurrencyId = updatedItem.BuyCurrencyId;
                 item.ItemTypeId = updatedItem.ItemTypeId;
                 item.Active = updatedItem.Active;
+                item.Description = updatedItem.Description;
 
                 context.SaveChanges();
             }
@@ -186,6 +188,7 @@ namespace ItemCreationTool
             item.BuyValue = (int)costNumericUpDown.Value;
             item.BuyCurrencyId = ((CurrencyType)currencyTypeComboBox.SelectedItem).CurrencyTypeId;
             item.ItemTypeId = ((ItemType)ItemTypeComboBox.SelectedItem).ItemTypeId;
+            item.Description = itemDescriptionTextBox.Text;
 
             return item;
         }

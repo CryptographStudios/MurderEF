@@ -81,7 +81,7 @@
             this.newItemButton = new System.Windows.Forms.Button();
             this.addItemTypeButton = new System.Windows.Forms.Button();
             this.typeDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.itemDescriptionTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.costNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sellValueNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StrNumericUpDown)).BeginInit();
@@ -587,20 +587,20 @@
             this.typeDescriptionTextBox.Size = new System.Drawing.Size(193, 125);
             this.typeDescriptionTextBox.TabIndex = 41;
             // 
-            // textBox1
+            // itemDescriptionTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(254, 128);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 125);
-            this.textBox1.TabIndex = 42;
+            this.itemDescriptionTextBox.Location = new System.Drawing.Point(254, 128);
+            this.itemDescriptionTextBox.Multiline = true;
+            this.itemDescriptionTextBox.Name = "itemDescriptionTextBox";
+            this.itemDescriptionTextBox.Size = new System.Drawing.Size(190, 125);
+            this.itemDescriptionTextBox.TabIndex = 42;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 522);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.itemDescriptionTextBox);
             this.Controls.Add(this.typeDescriptionTextBox);
             this.Controls.Add(this.addItemTypeButton);
             this.Controls.Add(this.newItemButton);
@@ -707,7 +707,7 @@
         private System.Windows.Forms.Button newItemButton;
         private System.Windows.Forms.Button addItemTypeButton;
         private System.Windows.Forms.TextBox typeDescriptionTextBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox itemDescriptionTextBox;
     }
 }
 
